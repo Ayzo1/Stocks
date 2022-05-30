@@ -30,6 +30,7 @@
 		8F9E8BA82844045F0021D43E /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9E8BA72844045F0021D43E /* NetworkingService.swift */; };
 		8F9E8BAC284407870021D43E /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9E8BAB284407870021D43E /* ServiceLocator.swift */; };
 		8F9E8BAF28441A310021D43E /* QuoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9E8BAE28441A310021D43E /* QuoteRequest.swift */; };
+		8F9E8BB5284523230021D43E /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9E8BB4284523230021D43E /* StockTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		8F9E8BA72844045F0021D43E /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		8F9E8BAB284407870021D43E /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		8F9E8BAE28441A310021D43E /* QuoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRequest.swift; sourceTree = "<group>"; };
+		8F9E8BB4284523230021D43E /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		8F18627E282C192C00E6A38E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8F9E8BB3284523050021D43E /* CustomView */,
 				8F186284282C1AC300E6A38E /* Presenter */,
 				8F186283282C1ABC00E6A38E /* View */,
 				8F186282282C1AB500E6A38E /* Model */,
@@ -230,6 +233,14 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		8F9E8BB3284523050021D43E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8F9E8BB4284523230021D43E /* StockTableViewCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9E8BB5284523230021D43E /* StockTableViewCell.swift in Sources */,
 				8F9E8B91284401230021D43E /* ParserProtocol.swift in Sources */,
 				8F186289282C272400E6A38E /* StocksViewController.swift in Sources */,
 				8F1862A0282C396F00E6A38E /* NetworkingServiceProtocol.swift in Sources */,

@@ -33,7 +33,6 @@ final class NetworkingService: NetworkingServiceProtocol {
 	func getQuote(symbol: String, completion: @escaping (Result<Quote, Error>) -> Void) {
 		let parser = QuoteParser()
 		let request = QuoteRequest(symbol: symbol)
-		
 		let requestConfig = RequestConfig(request: request, parser: parser)
 		
 		guard let requestSender = requestSender else {
