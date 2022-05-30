@@ -27,41 +27,4 @@ final class RequestSender: RequestSenderProtocol {
 		}
 		dataTask.resume()
 	}
-	
-	func connectToWebsocket<Parser>(requestConfig: RequestConfig<Parser>,
-							completionHandler: @escaping (Result<Parser.Model, Error>) -> Void) {
-		guard let request = requestConfig.request.request else {
-			completionHandler(.failure(NetworkingError.badURL))
-			return
-		}
-		let websocketTask = urlSession.webSocketTask(with: request)
-		websocketTask.resume()
-		websocketTask.receive() { result in
-			switch result {
-			case .failure(_):
-				completionHandler(.failure(NetworkingError.networkError))
-			case .success(let message):
-				switch message {
-				case .data(let data):
-					guard let parsedData = requestConfig.parser.parse(data: data) else {
-						completionHandler(.failure(NetworkingError.couldNotParse))
-						return
-					}
-					completionHandler(.success(parsedData))
-				case .string(let text):
-					guard let data: Data = text.data(using: .utf8) else {
-						completionHandler(.failure(NetworkingError.couldNotParse))
-						return
-					}
-					guard let parsedData = requestConfig.parser.parse(data: data) else {
-						completionHandler(.failure(NetworkingError.couldNotParse))
-						return
-					}
-					completionHandler(.success(parsedData))
-				default:
-					completionHandler(.failure(NetworkingError.couldNotParse))
-				}
-			}
-		}
-	}
 }
